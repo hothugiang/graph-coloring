@@ -10,6 +10,7 @@ from dwave.system.composites import FixedEmbeddingComposite, EmbeddingComposite
 import networkx as nx
 import matplotlib.pyplot as plt
 import pulp
+import time
 
 # colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "cyan", "magenta", "brown", "teal", "lime", "indigo", "violet", "maroon", "turquoise", "olive", "navy", "beige", "gray"]
 colors = [
@@ -100,10 +101,24 @@ def maximum_independent_set(graph):
 
     response = sampler.sample(bqm, num_reads=1000)
     
-    best_solution = next(response.samples())
-    independent_set = [node for node in best_solution if best_solution[node] == 1]
+    # best_solution = next(response.samples())
+    # independent_set = [node for node in best_solution if best_solution[node] == 1]
     
-    return independent_set
+    # return independent_set
+    best_energy = float('inf')
+    best_degree_sum = float('-inf')
+    best_independent_set = []
+    
+    for sample in response.samples():
+        independent_set = [node for node in sample if sample[node] == 1]
+        energy = response.first.energy
+        degree_sum = sum(graph.degree[node] for node in independent_set)
+        if energy < best_energy or (energy == best_energy and degree_sum > best_degree_sum):
+            best_energy = energy
+            best_degree_sum = degree_sum
+            best_independent_set = independent_set
+    
+    return best_independent_set
 
 def ilp_graph_coloring(graph):
     problem = pulp.LpProblem("GraphColoring", pulp.LpMinimize)
@@ -158,21 +173,33 @@ def new_graph(graph, independent_set):
 
 # edges = [(1, 2), (2, 3), (3, 4), (4, 5), (5, 1), (6,1), (6,2), (6,3), (6,4), (6, 5)]
 # graph = nx.Graph(edges)
-graph = nx.gnm_random_graph(10, 90)
+
+n = 10 
+p = 4.5 / n
+graph = nx.erdos_renyi_graph(n, p)
 input_graph = graph.copy()
 
+start_quantum = time.time()
 independent_sets = []
 while graph.number_of_nodes() != 0:
     current_independent_set = maximum_independent_set(graph)
     independent_sets.append(current_independent_set)
     graph = new_graph(graph, current_independent_set)
+end_quantum = time.time()
+time_quantum = end_quantum - start_quantum
 
+
+start_ilp = time.time()
 coloring = ilp_graph_coloring(input_graph)
+end_ilp = time.time()
+time_ilp = end_ilp - start_ilp
+
 num_independent_sets = len(independent_sets)
 print("Min number of colors with qubo: ", len(independent_sets))
+print("Time taken by bqm:", time_quantum, "seconds")
 
-print("ILP min number of colors: ", coloring)
 print("num of ILP min color", count_colors(coloring))
+print("Time taken by ILP:", time_ilp, "seconds")
 
 if (num_independent_sets == count_colors(coloring)):
     print ("Valid result")
