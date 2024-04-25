@@ -1,0 +1,10 @@
+With n = 50
+Min number of colors with qubo: 5
+Time taken by bqm: 1.7444288730621338 seconds
+SA valid result
+
+With n = 60
+Min number of colors with qubo: 4
+Time taken by bqm: 1.7941296100616455 seconds
+SA valid result
+

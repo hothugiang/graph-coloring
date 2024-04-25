@@ -1,0 +1,80 @@
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.176759958267212 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.34628748893737793 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.14858078956604 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.38343143463134766 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1251966953277588 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 1.8578686714172363 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1435625553131104 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.37746453285217285 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1729109287261963 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.3377869129180908 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1120245456695557 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 1.7624008655548096 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1789934635162354 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.3229665756225586 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1717164516448975 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.3935418128967285 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 3
+Time taken by bqm: 1.023007869720459 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.3033456802368164 seconds
+ILP valid result
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 1.1148498058319092 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.3103041648864746 seconds
+ILP valid result
+

@@ -1,0 +1,80 @@
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.6755764484405518 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.09160232543945312 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.7055478096008301 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.09436678886413574 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 4
+Time taken by bqm: 0.8120086193084717 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.27721714973449707 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.6783995628356934 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.08336663246154785 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 4
+Time taken by bqm: 0.7520718574523926 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.0894308090209961 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.6251926422119141 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.07912969589233398 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 4
+Time taken by bqm: 0.7945892810821533 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.09671902656555176 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.6281478404998779 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.09163951873779297 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 4
+Time taken by bqm: 0.8322784900665283 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.11756300926208496 seconds
+ILP valid result
+
+With n = 10
+Min number of colors with qubo: 4
+Time taken by bqm: 0.788804292678833 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 0.08891701698303223 seconds
+ILP valid result
+

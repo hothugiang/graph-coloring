@@ -1,0 +1,80 @@
+With n = 30
+Min number of colors with qubo: 3
+Time taken by bqm: 1.517547369003296 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 1.1384997367858887 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.5452358722686768 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 333.2364010810852 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 3
+Time taken by bqm: 1.354649305343628 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 0.8874561786651611 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.511267900466919 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 1.0251946449279785 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.5977046489715576 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 210.8947298526764 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 3
+Time taken by bqm: 1.3172881603240967 seconds
+SA valid result
+num of ILP min color: 3
+Time taken by ILP: 1.0664467811584473 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.5086560249328613 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 225.6929829120636 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.4988760948181152 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 87.18375158309937 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.5583875179290771 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 51.68765568733215 seconds
+ILP valid result
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 1.590550422668457 seconds
+SA valid result
+num of ILP min color: 4
+Time taken by ILP: 1.1072056293487549 seconds
+ILP valid result
+

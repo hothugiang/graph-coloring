@@ -105,12 +105,14 @@ def maximum_independent_set(graph):
     # independent_set = [node for node in best_solution if best_solution[node] == 1]
     
     # return independent_set
+
     best_energy = float('inf')
     best_degree_sum = float('-inf')
-    best_independent_set = []
+    best_independent_set = next(response.samples())
     
     for sample in response.samples():
         independent_set = [node for node in sample if sample[node] == 1]
+        if (not(is_independent_set(graph, independent_set))): continue
         energy = response.first.energy
         degree_sum = sum(graph.degree[node] for node in independent_set)
         if energy < best_energy or (energy == best_energy and degree_sum > best_degree_sum):
@@ -166,6 +168,12 @@ def is_valid_coloring(graph, coloring):
             return False
     return True
 
+def is_independent_set(graph, nodes):
+    for u, v in graph.edges():
+        if u in nodes and v in nodes:
+            return False
+    return True
+
 def new_graph(graph, independent_set):
     modified_graph = graph.copy()
     modified_graph.remove_nodes_from(independent_set) 
@@ -174,35 +182,45 @@ def new_graph(graph, independent_set):
 # edges = [(1, 2), (2, 3), (3, 4), (4, 5), (5, 1), (6,1), (6,2), (6,3), (6,4), (6, 5)]
 # graph = nx.Graph(edges)
 
-n = 10 
-p = 4.5 / n
-graph = nx.erdos_renyi_graph(n, p)
-input_graph = graph.copy()
+n = 30
 
-start_quantum = time.time()
-independent_sets = []
-while graph.number_of_nodes() != 0:
-    current_independent_set = maximum_independent_set(graph)
-    independent_sets.append(current_independent_set)
-    graph = new_graph(graph, current_independent_set)
-end_quantum = time.time()
-time_quantum = end_quantum - start_quantum
+with open("test_30.txt", "w") as f:
+    for i in range(10): 
+        f.write(f"With n = {n}\n")
+        p = 4.5 / n
+        graph = nx.erdos_renyi_graph(n, p)
+        input_graph = graph.copy()
 
+        is_valid_result = True
+        start_quantum = time.time()
+        independent_sets = []
+        while graph.number_of_nodes() != 0:
+            current_independent_set = maximum_independent_set(graph)
+            if (not(is_independent_set(graph, current_independent_set))): is_valid_result = False
+            independent_sets.append(current_independent_set)
+            graph = new_graph(graph, current_independent_set)
+        end_quantum = time.time()
+        time_quantum = end_quantum - start_quantum
 
-start_ilp = time.time()
-coloring = ilp_graph_coloring(input_graph)
-end_ilp = time.time()
-time_ilp = end_ilp - start_ilp
+        start_ilp = time.time()
+        coloring = ilp_graph_coloring(input_graph)
+        end_ilp = time.time()
+        time_ilp = end_ilp - start_ilp
 
-num_independent_sets = len(independent_sets)
-print("Min number of colors with qubo: ", len(independent_sets))
-print("Time taken by bqm:", time_quantum, "seconds")
+        num_independent_sets = len(independent_sets)
+        f.write(f"Min number of colors with qubo: {len(independent_sets)}\n")
+        f.write(f"Time taken by bqm: {time_quantum} seconds\n")
+        if (is_valid_result):
+            f.write(f"SA valid result\n")
+        else: f.write(f"SA invalid result\n")
+        
+        f.write(f"num of ILP min color: {count_colors(coloring)}\n")
+        f.write(f"Time taken by ILP: {time_ilp} seconds\n")
 
-print("num of ILP min color", count_colors(coloring))
-print("Time taken by ILP:", time_ilp, "seconds")
-
-if (num_independent_sets == count_colors(coloring)):
-    print ("Valid result")
+        if (is_valid_coloring(input_graph, coloring)):
+            f.write(f"ILP valid result\n")
+        else: f.write(f"ILP invalid result\n")
+        f.write(f"\n")
 
 plt.figure(figsize=(12, 6))
 

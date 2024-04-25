@@ -1,0 +1,25 @@
+With n = 10
+Min number of colors with qubo: 3
+Time taken by bqm: 0.2719745635986328 seconds
+num of ILP min color: 3
+Time taken by ILP: 0.15642714500427246 seconds
+
+With n = 20
+Min number of colors with qubo: 4
+Time taken by bqm: 0.632854700088501 seconds
+num of ILP min color: 4
+Time taken by ILP: 1.927896499633789 seconds
+
+With n = 30
+Min number of colors with qubo: 4
+Time taken by bqm: 0.9029972553253174 seconds
+num of ILP min color: 4
+Time taken by ILP: 138.2559459209442 seconds
+
+With n = 40
+Min number of colors with qubo: 4
+Time taken by bqm: 1.8228437900543213 seconds
+num of ILP min color: 4
+Time taken by ILP: 1535.2528820037842 seconds
+
+With n = 50
